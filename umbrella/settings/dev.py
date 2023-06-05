@@ -1,4 +1,4 @@
-from .prod import *
+from .settings import *
 
 SECRET_KEY = 'something'
 
