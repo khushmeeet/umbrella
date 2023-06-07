@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+from django.conf.global_settings import STATICFILES_DIRS
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -132,6 +133,8 @@ STATIC_URL = "static/"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+STATICFILES_DIRS = [Path(__file__).resolve().parent.parent.parent / "static"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -139,3 +142,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # API Token
 HCLOUD_TOKEN = os.getenv("HCLOUD_API_KEY")
+
+GITHUB_TOKEN = os.getenv("GITHUB_API_KEY")
