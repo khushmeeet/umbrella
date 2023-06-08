@@ -10,6 +10,8 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesomefree/js/solid.js' %}"></script>
+    <script src="{% static 'fontawesomefree/js/brands.js' %}"></script>
     <script src="{% static 'htmx.min.js' %}"></script>
 
 </head>
@@ -17,11 +19,10 @@
 <body class="m-0 p-0">
     <main class="flex flex-row">
         <div class="h-screen w-1/5 border-r border-gray-400 border-solid px-4 pb-4 pt-5">
-            <p class="font-berkeley font-bold">STATION</p>
-            <div class="h-screen w-16 flex flex-col mt-16 font-berkeley text-sm">
+            <p class="font-berkeley text-lg font-bold">STATION</p>
+            <div class="h-screen w-16 flex flex-col mt-10 font-berkeley text-sm">
                 <a href="{% url 'index' %}" class="py-1">Inventory</a>
                 <a href="{% url 'automation' %}" class="py-1">Automation</a>
-                <a href="#" class="py-1">Expenses</a>
             </div>
         </div>
         <div class="h-screen w-4/5">

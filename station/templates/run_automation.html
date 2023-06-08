@@ -1,6 +1,10 @@
-<section>
-    <div class="flex flex-row items-center">
-        <p>{{workflow}} has been triggered</p>
-        <i class="fa-regular fa-arrows-rotate justify-right"></i>
+<div class="w-full ">
+    <div class="flex flex-col items-center font-berkeley">
+        {% if workflow %}
+        <p class="font-bold">{{workflow}} triggered successfully</p>
+        <a class="italic underline text-sm text-zinc-600 decoration-dotted" href="{{workflow_url}}">{{workflow_url}}</a>
+        {% else %}
+        <p>{{detail}}</p>
+        {% endif %}
     </div>
-</section>
+</div>

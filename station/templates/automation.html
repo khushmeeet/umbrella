@@ -7,11 +7,11 @@
     </div>
     <div class="flex flex-row flex-wrap p-6">
         {% for workflow in workflows %}
-        <a href="" hx-trigger="click" hx-get="{% url 'run_automation' workflow.id %}" hx-target="workflow-target"
-            hx-swap="innerHTML">
-            <div class="border border-gray-400 border-solid p-1 mr-5 my-2">
+        <a href="" hx-trigger="click" hx-get="{% url 'run_automation' workflow.id %}" hx-target="#workflow-target"
+            hx-swap="innerHTML" hx-indicator="#spinner">
+            <div class="border border-gray-400 border-solid w-60 h-2/3 p-1 mr-5 my-2">
                 <div class="flex items-center">
-                    <i class="fa-solid fa-robot fa-xs my-2 mr-2"></i>
+                    <i class="fa-solid fa-robot fa-xs my-2 mx-1"></i>
                     <div class="flex-1 flex flex-col mx-2">
                         <p class="text-xs font-berkeley">{{workflow.name}}</p>
                     </div>
@@ -22,7 +22,8 @@
         <p class="font-ibm-plex">No automation workflows</p>
         {% endfor %}
     </div>
-    <div id="workflow-target" class="flex flex-row flex-wrap p-6 mt-5">
+    <div id="workflow-target" class="flex flex-row flex-wrap p-6 mt-5 justify-center">
+        <i id="spinner" class="fa-2x fa-solid fa-compass fa-spin htmx-indicator"></i>
     </div>
 </div>
 {% endblock %}
